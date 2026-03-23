@@ -1,148 +1,163 @@
-// AVOID UPDATING THIS FILE DIRECTLY. It is automatically generated.
 export type Json = string | number | boolean | null | { [key: string]: Json | undefined } | Json[]
 
 export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: '14.4'
+    PostgrestVersion: '14.1'
   }
   public: {
     Tables: {
       important_events: {
         Row: {
-          created_at: string | null
+          created_at: string
           deleted_at: string | null
-          device_id: string | null
-          dismissed: boolean | null
+          device_id: string
+          dismissed: boolean
           event_date: string
           event_type: string
           id: string
           notes: string | null
           profile_id: string | null
-          reminder_before: string | null
+          reminder_before: string
           title: string
-          updated_at: string | null
+          updated_at: string
         }
         Insert: {
-          created_at?: string | null
+          created_at?: string
           deleted_at?: string | null
-          device_id?: string | null
-          dismissed?: boolean | null
+          device_id: string
+          dismissed?: boolean
           event_date: string
-          event_type: string
+          event_type?: string
           id?: string
           notes?: string | null
           profile_id?: string | null
-          reminder_before?: string | null
+          reminder_before?: string
           title: string
-          updated_at?: string | null
+          updated_at?: string
         }
         Update: {
-          created_at?: string | null
+          created_at?: string
           deleted_at?: string | null
-          device_id?: string | null
-          dismissed?: boolean | null
+          device_id?: string
+          dismissed?: boolean
           event_date?: string
           event_type?: string
           id?: string
           notes?: string | null
           profile_id?: string | null
-          reminder_before?: string | null
+          reminder_before?: string
           title?: string
-          updated_at?: string | null
+          updated_at?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: 'important_events_profile_id_fkey'
+            columns: ['profile_id']
+            isOneToOne: false
+            referencedRelation: 'profiles'
+            referencedColumns: ['id']
+          },
+        ]
       }
       monthly_history_imports: {
         Row: {
-          created_at: string | null
+          created_at: string
           credits: number | null
           deleted_at: string | null
-          device_id: string | null
-          hours: number | null
+          device_id: string
+          hours: number
           id: string
           month: number
           notes: string | null
           profile_id: string | null
-          revisitas: number | null
+          revisitas: number
           source: string | null
-          studies: number | null
-          updated_at: string | null
+          studies: number
+          updated_at: string
           year: number
         }
         Insert: {
-          created_at?: string | null
+          created_at?: string
           credits?: number | null
           deleted_at?: string | null
-          device_id?: string | null
-          hours?: number | null
+          device_id: string
+          hours?: number
           id?: string
           month: number
           notes?: string | null
           profile_id?: string | null
-          revisitas?: number | null
+          revisitas?: number
           source?: string | null
-          studies?: number | null
-          updated_at?: string | null
+          studies?: number
+          updated_at?: string
           year: number
         }
         Update: {
-          created_at?: string | null
+          created_at?: string
           credits?: number | null
           deleted_at?: string | null
-          device_id?: string | null
-          hours?: number | null
+          device_id?: string
+          hours?: number
           id?: string
           month?: number
           notes?: string | null
           profile_id?: string | null
-          revisitas?: number | null
+          revisitas?: number
           source?: string | null
-          studies?: number | null
-          updated_at?: string | null
+          studies?: number
+          updated_at?: string
           year?: number
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: 'monthly_history_imports_profile_id_fkey'
+            columns: ['profile_id']
+            isOneToOne: false
+            referencedRelation: 'profiles'
+            referencedColumns: ['id']
+          },
+        ]
       }
       payments: {
         Row: {
           amount: number | null
-          created_at: string | null
+          created_at: string
           currency: string | null
-          email: string | null
+          email: string
           id: string
           paid_at: string | null
           provider: string
           provider_sale_id: string | null
           raw_payload: Json | null
-          status: string | null
+          status: string
           user_id: string | null
         }
         Insert: {
           amount?: number | null
-          created_at?: string | null
+          created_at?: string
           currency?: string | null
-          email?: string | null
-          id?: string
-          paid_at?: string | null
-          provider: string
-          provider_sale_id?: string | null
-          raw_payload?: Json | null
-          status?: string | null
-          user_id?: string | null
-        }
-        Update: {
-          amount?: number | null
-          created_at?: string | null
-          currency?: string | null
-          email?: string | null
+          email: string
           id?: string
           paid_at?: string | null
           provider?: string
           provider_sale_id?: string | null
           raw_payload?: Json | null
-          status?: string | null
+          status: string
+          user_id?: string | null
+        }
+        Update: {
+          amount?: number | null
+          created_at?: string
+          currency?: string | null
+          email?: string
+          id?: string
+          paid_at?: string | null
+          provider?: string
+          provider_sale_id?: string | null
+          raw_payload?: Json | null
+          status?: string
           user_id?: string | null
         }
         Relationships: []
@@ -150,8 +165,8 @@ export type Database = {
       profiles: {
         Row: {
           congregation: string | null
-          created_at: string | null
-          device_id: string | null
+          created_at: string
+          device_id: string
           email: string | null
           id: string
           name: string | null
@@ -160,15 +175,15 @@ export type Database = {
           recipient_email: string | null
           recipient_name: string | null
           recipient_whatsapp: string | null
-          service_role: string
-          updated_at: string | null
+          service_role: string | null
+          updated_at: string
           user_id: string | null
           whatsapp: string | null
         }
         Insert: {
           congregation?: string | null
-          created_at?: string | null
-          device_id?: string | null
+          created_at?: string
+          device_id: string
           email?: string | null
           id?: string
           name?: string | null
@@ -177,15 +192,15 @@ export type Database = {
           recipient_email?: string | null
           recipient_name?: string | null
           recipient_whatsapp?: string | null
-          service_role: string
-          updated_at?: string | null
+          service_role?: string | null
+          updated_at?: string
           user_id?: string | null
           whatsapp?: string | null
         }
         Update: {
           congregation?: string | null
-          created_at?: string | null
-          device_id?: string | null
+          created_at?: string
+          device_id?: string
           email?: string | null
           id?: string
           name?: string | null
@@ -194,8 +209,8 @@ export type Database = {
           recipient_email?: string | null
           recipient_name?: string | null
           recipient_whatsapp?: string | null
-          service_role?: string
-          updated_at?: string | null
+          service_role?: string | null
+          updated_at?: string
           user_id?: string | null
           whatsapp?: string | null
         }
@@ -203,9 +218,9 @@ export type Database = {
       }
       service_sessions: {
         Row: {
-          created_at: string | null
+          created_at: string
           deleted_at: string | null
-          device_id: string | null
+          device_id: string
           duration_seconds: number
           id: string
           notes: string | null
@@ -213,25 +228,25 @@ export type Database = {
           session_date: string
           source: string | null
           sync_status: string | null
-          updated_at: string | null
+          updated_at: string
         }
         Insert: {
-          created_at?: string | null
+          created_at?: string
           deleted_at?: string | null
-          device_id?: string | null
-          duration_seconds: number
+          device_id: string
+          duration_seconds?: number
           id?: string
           notes?: string | null
           profile_id?: string | null
           session_date: string
           source?: string | null
           sync_status?: string | null
-          updated_at?: string | null
+          updated_at?: string
         }
         Update: {
-          created_at?: string | null
+          created_at?: string
           deleted_at?: string | null
-          device_id?: string | null
+          device_id?: string
           duration_seconds?: number
           id?: string
           notes?: string | null
@@ -239,18 +254,26 @@ export type Database = {
           session_date?: string
           source?: string | null
           sync_status?: string | null
-          updated_at?: string | null
+          updated_at?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: 'service_sessions_profile_id_fkey'
+            columns: ['profile_id']
+            isOneToOne: false
+            referencedRelation: 'profiles'
+            referencedColumns: ['id']
+          },
+        ]
       }
       students: {
         Row: {
           active: boolean | null
           address: string | null
           contact_type: string | null
-          created_at: string | null
+          created_at: string
           deleted_at: string | null
-          device_id: string | null
+          device_id: string
           id: string
           latitude: number | null
           location_text: string | null
@@ -258,15 +281,15 @@ export type Database = {
           name: string
           notes: string | null
           profile_id: string | null
-          updated_at: string | null
+          updated_at: string
         }
         Insert: {
           active?: boolean | null
           address?: string | null
           contact_type?: string | null
-          created_at?: string | null
+          created_at?: string
           deleted_at?: string | null
-          device_id?: string | null
+          device_id: string
           id?: string
           latitude?: number | null
           location_text?: string | null
@@ -274,15 +297,15 @@ export type Database = {
           name: string
           notes?: string | null
           profile_id?: string | null
-          updated_at?: string | null
+          updated_at?: string
         }
         Update: {
           active?: boolean | null
           address?: string | null
           contact_type?: string | null
-          created_at?: string | null
+          created_at?: string
           deleted_at?: string | null
-          device_id?: string | null
+          device_id?: string
           id?: string
           latitude?: number | null
           location_text?: string | null
@@ -290,53 +313,76 @@ export type Database = {
           name?: string
           notes?: string | null
           profile_id?: string | null
-          updated_at?: string | null
+          updated_at?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: 'students_profile_id_fkey'
+            columns: ['profile_id']
+            isOneToOne: false
+            referencedRelation: 'profiles'
+            referencedColumns: ['id']
+          },
+        ]
       }
       study_records: {
         Row: {
-          created_at: string | null
+          created_at: string
           deleted_at: string | null
-          device_id: string | null
+          device_id: string
           duration_minutes: number | null
           id: string
           notes: string | null
           profile_id: string | null
           student_id: string | null
           study_date: string
-          updated_at: string | null
+          updated_at: string
         }
         Insert: {
-          created_at?: string | null
+          created_at?: string
           deleted_at?: string | null
-          device_id?: string | null
+          device_id: string
           duration_minutes?: number | null
           id?: string
           notes?: string | null
           profile_id?: string | null
           student_id?: string | null
           study_date: string
-          updated_at?: string | null
+          updated_at?: string
         }
         Update: {
-          created_at?: string | null
+          created_at?: string
           deleted_at?: string | null
-          device_id?: string | null
+          device_id?: string
           duration_minutes?: number | null
           id?: string
           notes?: string | null
           profile_id?: string | null
           student_id?: string | null
           study_date?: string
-          updated_at?: string | null
+          updated_at?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: 'study_records_profile_id_fkey'
+            columns: ['profile_id']
+            isOneToOne: false
+            referencedRelation: 'profiles'
+            referencedColumns: ['id']
+          },
+          {
+            foreignKeyName: 'study_records_student_id_fkey'
+            columns: ['student_id']
+            isOneToOne: false
+            referencedRelation: 'students'
+            referencedColumns: ['id']
+          },
+        ]
       }
       subscriptions: {
         Row: {
-          created_at: string | null
-          email: string | null
+          created_at: string
+          email: string
           expires_at: string | null
           id: string
           last_payment_at: string | null
@@ -349,30 +395,12 @@ export type Database = {
           raw_payload: Json | null
           starts_at: string | null
           status: string
-          updated_at: string | null
+          updated_at: string
           user_id: string | null
         }
         Insert: {
-          created_at?: string | null
-          email?: string | null
-          expires_at?: string | null
-          id?: string
-          last_payment_at?: string | null
-          plan_name?: string | null
-          product_id?: string | null
-          product_name?: string | null
-          provider: string
-          provider_customer_id?: string | null
-          provider_sale_id?: string | null
-          raw_payload?: Json | null
-          starts_at?: string | null
-          status: string
-          updated_at?: string | null
-          user_id?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          email?: string | null
+          created_at?: string
+          email: string
           expires_at?: string | null
           id?: string
           last_payment_at?: string | null
@@ -385,8 +413,59 @@ export type Database = {
           raw_payload?: Json | null
           starts_at?: string | null
           status?: string
-          updated_at?: string | null
+          updated_at?: string
           user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          expires_at?: string | null
+          id?: string
+          last_payment_at?: string | null
+          plan_name?: string | null
+          product_id?: string | null
+          product_name?: string | null
+          provider?: string
+          provider_customer_id?: string | null
+          provider_sale_id?: string | null
+          raw_payload?: Json | null
+          starts_at?: string | null
+          status?: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      sync_logs: {
+        Row: {
+          action: string | null
+          created_at: string
+          device_id: string
+          entity_id: string | null
+          entity_type: string
+          error_message: string | null
+          id: string
+          status: string | null
+        }
+        Insert: {
+          action?: string | null
+          created_at?: string
+          device_id: string
+          entity_id?: string | null
+          entity_type: string
+          error_message?: string | null
+          id?: string
+          status?: string | null
+        }
+        Update: {
+          action?: string | null
+          created_at?: string
+          device_id?: string
+          entity_id?: string | null
+          entity_type?: string
+          error_message?: string | null
+          id?: string
+          status?: string | null
         }
         Relationships: []
       }
@@ -526,149 +605,3 @@ export const Constants = {
     Enums: {},
   },
 } as const
-
-// ====== DATABASE EXTENDED CONTEXT (auto-generated) ======
-// This section contains actual PostgreSQL column types, constraints, RLS policies,
-// functions, triggers, indexes and materialized views not present in the type definitions above.
-// IMPORTANT: The TypeScript types above map UUID, TEXT, VARCHAR all to "string".
-// Use the COLUMN TYPES section below to know the real PostgreSQL type for each column.
-// Always use the correct PostgreSQL type when writing SQL migrations.
-
-// --- COLUMN TYPES (actual PostgreSQL types) ---
-// Use this to know the real database type when writing migrations.
-// "string" in TypeScript types above may be uuid, text, varchar, timestamptz, etc.
-// Table: important_events
-//   id: uuid (not null, default: gen_random_uuid())
-//   device_id: text (nullable)
-//   profile_id: uuid (nullable)
-//   title: text (not null)
-//   event_type: text (not null)
-//   event_date: timestamp with time zone (not null)
-//   reminder_before: text (nullable)
-//   notes: text (nullable)
-//   dismissed: boolean (nullable, default: false)
-//   created_at: timestamp with time zone (nullable, default: now())
-//   updated_at: timestamp with time zone (nullable, default: now())
-//   deleted_at: timestamp with time zone (nullable)
-// Table: monthly_history_imports
-//   id: uuid (not null, default: gen_random_uuid())
-//   profile_id: uuid (nullable)
-//   device_id: text (nullable)
-//   month: integer (not null)
-//   year: integer (not null)
-//   hours: numeric (nullable)
-//   studies: integer (nullable)
-//   revisitas: integer (nullable)
-//   credits: integer (nullable)
-//   notes: text (nullable)
-//   source: text (nullable)
-//   created_at: timestamp with time zone (nullable, default: now())
-//   updated_at: timestamp with time zone (nullable, default: now())
-//   deleted_at: timestamp with time zone (nullable)
-// Table: payments
-//   id: uuid (not null, default: gen_random_uuid())
-//   user_id: uuid (nullable)
-//   email: text (nullable)
-//   provider: text (not null)
-//   provider_sale_id: text (nullable)
-//   amount: numeric (nullable)
-//   currency: text (nullable)
-//   status: text (nullable)
-//   paid_at: timestamp with time zone (nullable)
-//   raw_payload: jsonb (nullable)
-//   created_at: timestamp with time zone (nullable, default: now())
-// Table: profiles
-//   id: uuid (not null, default: gen_random_uuid())
-//   user_id: uuid (nullable)
-//   device_id: text (nullable)
-//   name: text (nullable)
-//   email: text (nullable)
-//   whatsapp: text (nullable)
-//   service_role: text (not null)
-//   congregation: text (nullable)
-//   notes: text (nullable)
-//   pioneer_start_date: date (nullable)
-//   recipient_name: text (nullable)
-//   recipient_whatsapp: text (nullable)
-//   recipient_email: text (nullable)
-//   created_at: timestamp with time zone (nullable, default: now())
-//   updated_at: timestamp with time zone (nullable, default: now())
-// Table: service_sessions
-//   id: uuid (not null, default: gen_random_uuid())
-//   profile_id: uuid (nullable)
-//   device_id: text (nullable)
-//   session_date: date (not null)
-//   duration_seconds: integer (not null)
-//   notes: text (nullable)
-//   sync_status: text (nullable)
-//   source: text (nullable)
-//   created_at: timestamp with time zone (nullable, default: now())
-//   updated_at: timestamp with time zone (nullable, default: now())
-//   deleted_at: timestamp with time zone (nullable)
-// Table: students
-//   id: uuid (not null, default: gen_random_uuid())
-//   profile_id: uuid (nullable)
-//   device_id: text (nullable)
-//   name: text (not null)
-//   address: text (nullable)
-//   location_text: text (nullable)
-//   contact_type: text (nullable)
-//   notes: text (nullable)
-//   active: boolean (nullable, default: true)
-//   latitude: double precision (nullable)
-//   longitude: double precision (nullable)
-//   created_at: timestamp with time zone (nullable, default: now())
-//   updated_at: timestamp with time zone (nullable, default: now())
-//   deleted_at: timestamp with time zone (nullable)
-// Table: study_records
-//   id: uuid (not null, default: gen_random_uuid())
-//   profile_id: uuid (nullable)
-//   student_id: uuid (nullable)
-//   device_id: text (nullable)
-//   study_date: date (not null)
-//   duration_minutes: integer (nullable)
-//   notes: text (nullable)
-//   created_at: timestamp with time zone (nullable, default: now())
-//   updated_at: timestamp with time zone (nullable, default: now())
-//   deleted_at: timestamp with time zone (nullable)
-// Table: subscriptions
-//   id: uuid (not null, default: gen_random_uuid())
-//   user_id: uuid (nullable)
-//   email: text (nullable)
-//   provider: text (not null)
-//   provider_customer_id: text (nullable)
-//   provider_sale_id: text (nullable)
-//   product_id: text (nullable)
-//   product_name: text (nullable)
-//   plan_name: text (nullable)
-//   status: text (not null)
-//   starts_at: timestamp with time zone (nullable)
-//   expires_at: timestamp with time zone (nullable)
-//   last_payment_at: timestamp with time zone (nullable)
-//   raw_payload: jsonb (nullable)
-//   created_at: timestamp with time zone (nullable, default: now())
-//   updated_at: timestamp with time zone (nullable, default: now())
-
-// --- CONSTRAINTS ---
-// Table: important_events
-//   PRIMARY KEY important_events_pkey: PRIMARY KEY (id)
-// Table: monthly_history_imports
-//   PRIMARY KEY monthly_history_imports_pkey: PRIMARY KEY (id)
-// Table: payments
-//   PRIMARY KEY payments_pkey: PRIMARY KEY (id)
-// Table: profiles
-//   FOREIGN KEY fk_user: FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
-//   PRIMARY KEY profiles_pkey: PRIMARY KEY (id)
-// Table: service_sessions
-//   PRIMARY KEY service_sessions_pkey: PRIMARY KEY (id)
-// Table: students
-//   PRIMARY KEY students_pkey: PRIMARY KEY (id)
-// Table: study_records
-//   PRIMARY KEY study_records_pkey: PRIMARY KEY (id)
-// Table: subscriptions
-//   PRIMARY KEY subscriptions_pkey: PRIMARY KEY (id)
-
-// --- ROW LEVEL SECURITY POLICIES ---
-// Table: profiles
-//   Policy "Users can manage own profile" (ALL, PERMISSIVE) roles={public}
-//     USING: (auth.uid() = user_id)
