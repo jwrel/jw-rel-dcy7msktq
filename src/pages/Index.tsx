@@ -15,7 +15,7 @@ const Index = () => {
     <div className="container mx-auto py-12 px-4 flex flex-col items-center justify-center min-h-[80vh] text-center space-y-6 animate-fade-in-up">
       <div className="space-y-2">
         <h1 className="text-4xl font-bold tracking-tight">JW REL</h1>
-        <p className="text-xl text-muted-foreground">Iniciando a importação do projeto.</p>
+        <p className="text-xl text-muted-foreground">Reconstrução do projeto em andamento.</p>
       </div>
 
       <div className="bg-card border rounded-xl p-8 max-w-lg w-full shadow-sm text-left space-y-6">
@@ -25,10 +25,11 @@ const Index = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
             </span>
-            Passos 1 e 2 Concluídos
+            Configurações Iniciais Aplicadas
           </h2>
           <p className="text-sm text-muted-foreground mt-1">
-            Arquitetura base configurada e conexão com o Supabase estabelecida com sucesso.
+            As configurações base do <code>package.json</code> e <code>tsconfig.app.json</code>{' '}
+            foram reconhecidas e aplicadas ao ambiente. Conexão com o Supabase estabelecida.
           </p>
         </div>
 
@@ -43,10 +44,11 @@ const Index = () => {
         </div>
 
         <div className="pt-4 border-t border-border">
-          <h3 className="font-medium text-primary">Próximo Passo (3 e 4)</h3>
+          <h3 className="font-medium text-primary">Próximo Passo</h3>
           <p className="text-sm mt-2 text-muted-foreground">
-            Aguardando os arquivos de <strong>Layout</strong> e <strong>Rotas</strong> para
-            continuarmos com a reconstrução da interface. Por favor, cole os arquivos no chat.
+            Aguardando os primeiros componentes das suas telas principais (ex:{' '}
+            <strong>Layout</strong>, <strong>Dashboard</strong> ou rotas). Por favor, cole os
+            códigos no chat.
           </p>
         </div>
       </div>
