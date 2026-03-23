@@ -28,9 +28,10 @@ const Index = () => {
             Configurações Aplicadas com Sucesso!
           </h2>
           <p className="text-sm text-muted-foreground mt-1">
-            As configurações de base (<code>tsconfig.json</code>, <code>tsconfig.app.json</code> e{' '}
-            <code>vite.config.ts</code>) foram recebidas e alinhadas ao ambiente do sistema. Seu
-            PWA, cache e aliases estão integrados estruturalmente.
+            As configurações de base (<code>tsconfig.json</code>, <code>tsconfig.app.json</code>,{' '}
+            <code>tsconfig.node.json</code> e <code>vite.config.ts</code>) foram recebidas e
+            alinhadas ao ambiente do sistema. Seu PWA, cache e aliases estão integrados
+            estruturalmente.
           </p>
         </div>
 
